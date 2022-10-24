@@ -19,6 +19,9 @@ console.log(c);
 console.log(false);
 b = 3;
 console.log(b);//let은 변경 가능하다.
+let e;
+console.log(e);
+//undefined 또한 data type이다.
 
 //C언어와 JavaScript는 변수 선언시 메모리를 할당하는 구조가 다르다.
 //자세한 내용 : 디스코드 개인 서버에 기록해뒀음.
