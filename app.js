@@ -1,20 +1,30 @@
-const pale = {
-    name: ["이창민", "이재백", "한우석"],
-    age: 23,
-    male: true,
-    female: false,
-    hey: function(ㅋㅋ) {
-        console.log("알빠노" + ㅋㅋ)
+caculator = {
+    add: function(a, b) {
+        console.log(a + b);
+    },
+    sub: function(a, b) {
+        console.log(a - b);
+    },
+    mul: function(a, b) {
+        console.log(a * b);
+    },
+    div: function(a, b) {
+        console.log(a / b);
+    },
+    rem: function(a, b) {
+        console.log(a % b);
+    },
+    squ: function(a, b) {
+        console.log(a ** b);
     }
 };
 
-pale.hey("ㅋㅋ");
-pale.hey("ㅎㅎ");
+const a = 6;
+const b = 3;
 
-function hey(name) {
-    console.log(name + "멍청이");
-}
-
-hey("이창민");
-hey("이재백");
-hey("한우석");
+caculator.add(a, b);
+caculator.sub(a, b);
+caculator.mul(a, b);
+caculator.div(a, b);
+caculator.rem(a, b);
+caculator.squ(a, b);
