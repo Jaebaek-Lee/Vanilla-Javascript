@@ -1,30 +1,25 @@
-caculator = {
+calculator = {
     add: function(a, b) {
-        console.log(a + b);
+        return a + b;
     },
     sub: function(a, b) {
-        console.log(a - b);
+        return a - b;
     },
     mul: function(a, b) {
-        console.log(a * b);
+        return a * b;
     },
     div: function(a, b) {
-        console.log(a / b);
-    },
-    rem: function(a, b) {
-        console.log(a % b);
-    },
-    squ: function(a, b) {
-        console.log(a ** b);
+        return a / b;
     }
 };
 
-const a = 6;
-const b = 3;
+let a = parseInt(prompt("Please input first integer."));
+let b = parseInt(prompt("Please input second integer."));
 
-caculator.add(a, b);
-caculator.sub(a, b);
-caculator.mul(a, b);
-caculator.div(a, b);
-caculator.rem(a, b);
-caculator.squ(a, b);
+const add = calculator.add(a, b);
+const sub = calculator.sub(a, b);
+const mul = calculator.mul(a, b);
+const div = calculator.div(a, b);
+
+console.log(add, sub);
+console.log(calculator.add(add, sub));
