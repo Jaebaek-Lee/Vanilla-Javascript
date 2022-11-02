@@ -1,20 +1,12 @@
-const age = parseInt(prompt("How old are you?"));
-//우측이 먼저 실행되고 그 값이 저장된 주소를 age에 할당하는 것이라 되는 것
-//이건 c++도 마찬가지임. 즉 둘 다 const 변수의 값 할당이 런타임 시간에 일어나는 것 같다.
-//알아보니 실제로 컴파일러는 const 변수가 compile time constants인지 run time constants인지
-//컴파일 단계에서 구분하는 것 같다.
-if (isNaN(age) || age < 0) {
-    console.log("Please write a real positive number");
-}
-else if (age < 18) {
-    console.log("Go to your mommy");
-}
-else if (age >= 18 && age <= 50) {
-    console.log("You can drink");
-}
-else {
-    console.log("I love you");
-}
-//===는 자동 형변환을 용납하지 않는다.
-//parseInt는 숫자 말고 다른게 들어오면 NaN를 리턴한다.
-//기타는 다 C++과 동일함. || && 등등
+//console.log = 요소를 HTML과 같은 트리 구조로 출력
+//console.dir = 요소를 JSON과 같은 트리 구조로 출력 - 객체의 요소를 보여줌
+console.dir(document);
+//document는 html 파일을 그대로 객체화해둔 것.
+console.dir(document.getElementById("title"));
+//document 객체의 getE~함수 - 인자로 title을 전달 - 를 호출하여 객체로 옮겨진 태그를 리턴받음.
+const title = document.getElementById("title");
+//const title은 title이라는 id가 있는 객체화된 태그가 됨.
+console.dir(title.innerText);
+//타이틀 객체의 innerText 키가 가진 value를 리턴받음.
+//title = "gogo";//error
+title.innerHTML = "gogo";//title 객체의 innerHTML 키의 value가 gogo로 변경됨.
