@@ -1,5 +1,29 @@
-const head = document.querySelector(".header h1:first-child"); //html 객체 quertSelector 함수는
-//css의 셀렉터 형식으로 인자를 받고, 공백으로 하위로 내려가고, :로 몇번째인지 구분
-//h1을 결국 클래스화해서 title에 저장
-console.log(head);//h1을 컴포넌트 형식으로 출력
-console.dir(head);//h1을 객체 형식으로 출력
+//div.header:nth-child(2) h1
+//header라는 클래스 네임이 있는 두 번째 div의 첫 번째 h1태그
+const head = document.querySelector("div.header:nth-child(1) h1");
+//이 head는 진짜 document.head랑 다르다. 그냥 내가 지은 이름일 뿐...
+console.dir(head);
+
+function click() {
+    head.style.color = "blue";
+    head.innerText = "Clicked!";
+};
+
+function mouseenter() {
+    head.innerText = "Mouse is here!";
+};
+
+function mouseleave() {
+    head.innerText = "JavaScript";
+};
+
+function resize() {
+    document.body.style.backgroundColor = "darkgrey";
+    //body, head, title같은건 document.으로 호출이 가능하다. 하지만 div나 h1같은건 안됨.
+    //이건 querySelector로 받아야해.
+}
+
+head.addEventListener("mouseenter", mouseenter);
+head.addEventListener("click", click);
+head.addEventListener("mouseleave", mouseleave);
+window.addEventListener("resize", resize);
