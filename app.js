@@ -5,25 +5,19 @@ const head = document.querySelector("div.header:nth-child(1) h1");
 console.dir(head);
 
 function click() {
-    head.style.color = "blue";
-    head.innerText = "Clicked!";
-};
-
-function mouseenter() {
-    head.innerText = "Mouse is here!";
-};
-
-function mouseleave() {
-    head.innerText = "JavaScript";
-};
-
-function resize() {
-    document.body.style.backgroundColor = "darkgrey";
-    //body, head, title같은건 document.으로 호출이 가능하다. 하지만 div나 h1같은건 안됨.
-    //이건 querySelector로 받아야해.
+    const color = head.style.color;
+    let newColor;
+    console.log(color); //element.style은 js에서 지정된 style만 불러오고 실제 css value랑은
+    //무관하게 동작한다. 따라서 현재 css로 설정된 color가 black여도 콘솔은 아무것도 출력 x
+    if (color === "blue") { //if === "black"이라 썼을 경우 현재 값을 모르기 때문에
+        newColor = "black";
+    }
+    else {
+        newColor = "blue"; //이쪽으로 넘어가고, 여기서 색을 현재와 같은 색으로 바꾼다면 첫 클릭이
+        //씹히는 것 처럼 보일 것. 따라서 css로 지정된 색은 if 밑에 넣어줘야함.
+        console.log(color); //처음엔 암것도 출력 안할것.
+    }
+    head.style.color = newColor;
 }
 
-head.addEventListener("mouseenter", mouseenter);
 head.addEventListener("click", click);
-head.addEventListener("mouseleave", mouseleave);
-window.addEventListener("resize", resize);
