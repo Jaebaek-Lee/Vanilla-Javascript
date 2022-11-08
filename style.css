@@ -2,13 +2,13 @@ body {
     background-color: beige;
 }
 
-h1 {
-    color: black;
+.active {
+    color: tomato;
+}
+
+.mid {
+    /* color: black; 이게 앞에 있어서 .active를 씹을것*/
     margin-top: 10%;
     margin-bottom: 0%;
     text-align: center;
-}
-
-.active {
-    color: tomato;
 }
