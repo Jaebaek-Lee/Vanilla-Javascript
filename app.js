@@ -9,11 +9,12 @@ console.log(head.style.color);
         //만약 html에서 이미 클래스가 정의되어 있다면 그걸 없애버림. 문제 됨.
 
 function click() {
-    const clickedClass = "active"; //수정 편의 + 오류 발생 낮춤
-    if (head.classList.contains(clickedClass)) {
-        head.classList.remove(clickedClass);
-    }
-    else head.classList.add(clickedClass);
+    // const clickedClass = "active"; //수정 편의 + 오류 발생 낮춤
+    // if (head.classList.contains(clickedClass)) {
+    //     head.classList.remove(clickedClass);
+    // }
+    // else head.classList.add(clickedClass);
+    head.classList.toggle("active");
 }
 
 head.addEventListener("click", click);
