@@ -1,11 +1,14 @@
-// const loginForm = document.getElementById("login-form");
-// const loginInput = loginForm.querySelector("input");
+const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
+const greeting = document.querySelector("#greeting");
 
-function onLoginBtnClick() {
-    console.log("hello", loginInput.value);
-    //입력이 없어도 hello를 출력하는 문제 발생.
+function login(event) {
+    event.preventDefault();
+    loginForm.classList.add("hidden");
+    const USER_NAME = loginInput.value;
+    greeting.innerText = USER_NAME;
+    greeting.innerText = `Hello ${USER_NAME}`
+    greeting.classList.remove("hidden"); 
 }
 
-loginButton.addEventListener("click", onLoginBtnClick);
+loginForm.addEventListener("submit", login);
